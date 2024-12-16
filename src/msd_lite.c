@@ -608,10 +608,10 @@ msd_http_srv_on_req_rcv_cb(http_srv_cli_p cli, void *udata __unused,
 		resp->status_code = 400;
 		return (HTTP_SRV_CB_CONTINUE);
 	}
-	if (0 == (req->flags & HTTP_SRV_RD_F_HOST_IS_LOCAL)) {
-		resp->status_code = 403;
-		return (HTTP_SRV_CB_CONTINUE);
-	}
+	//if (0 == (req->flags & HTTP_SRV_RD_F_HOST_IS_LOCAL)) {
+	//	resp->status_code = 403;
+	//	return (HTTP_SRV_CB_CONTINUE);
+	//}
 
 	/* Statistic request. */
 	if (HTTP_REQ_METHOD_GET == req->line.method_code &&
