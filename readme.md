@@ -3,7 +3,21 @@
 [![Build-macOS-latest Actions Status](https://github.com/rozhuk-im/msd_lite/workflows/build-macos-latest/badge.svg)](https://github.com/rozhuk-im/msd_lite/actions)
 [![Build-Ubuntu-latest Actions Status](https://github.com/rozhuk-im/msd_lite/workflows/build-ubuntu-latest/badge.svg)](https://github.com/rozhuk-im/msd_lite/actions)
 
+## 修改版（注释掉host判断，使其可以被反向代理）
+修改自：[rozhuk-im](https://github.com/rozhuk-im/msd_lite)
 
+Multi Stream daemon (msd) 程序的轻量级版本，用于通过 HTTP 管理网络上的 IPTV 流。
+
+使用方法：
+
+更换msd_lite源为修改版（可以反向代理）
+```
+sed -i 's|PKG_SOURCE_URL:=.*|PKG_SOURCE_URL:=https://github.com/fichenx/msd_lite.git|g'  feeds/packages/net/msd_lite/Makefile
+sed -i 's|PKG_SOURCE_DATE:=.*|PKG_SOURCE_DATE:=2024-12-16|g'  feeds/packages/net/msd_lite/Makefile
+sed -i 's|PKG_SOURCE_VERSION:=.*|PKG_SOURCE_VERSION:=983f5c07527b0c87a6494db49eade57da3c516bf|g'  feeds/packages/net/msd_lite/Makefile
+sed -i 's|PKG_MIRROR_HASH:=.*|PKG_MIRROR_HASH:=11039120524d97a23ebf57f4ac494464cff6dd07a843c0b968ef818920361965|g'  feeds/packages/net/msd_lite/Makefile
+```
+---
 Rozhuk Ivan <rozhuk.im@gmail.com> 2011 - 2023
 
 msd_lite - Multi stream daemon lite.
